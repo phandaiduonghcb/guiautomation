@@ -1,4 +1,4 @@
-# An interface for GUI Automation based on pyautogui
+# An application for GUI Automation based on pyautogui
 Pyautogui: https://github.com/asweigart/pyautogui
 
 It is used to control the mouse and keyboard to automate interactions with other applications:
