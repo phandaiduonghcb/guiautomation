@@ -1,0 +1,9 @@
+{'name': 'Left click', 'interval': '1', 'choosePos': 2, 'location': '/media/duong/DATA/LINUX/Code/Auto/img/brave.png', 'duration': None}
+{'name': 'Right click', 'interval': '1', 'choosePos': 2, 'location': '/media/duong/DATA/LINUX/Code/Auto/img/brave.png', 'duration': None}
+{'name': 'Left click', 'interval': '1', 'choosePos': 2, 'location': '/media/duong/DATA/LINUX/Code/Auto/img/inside_doc.png', 'duration': None}
+{'name': 'Scroll down', 'interval': '1', 'clicks': '7', 'location': None, 'duration': None}
+{'name': 'Key combination', 'interval': '1', 'keyComb': 'Ctrl,Alt,t', 'location': None, 'duration': None}
+{'name': 'Type a string', 'interval': '1', 'duration': '1.5', 'string': 'duong is the best', 'location': None}
+{'name': 'Press a key', 'interval': '1', 'key': '!', 'location': None, 'duration': None}
+{'name': 'Hold a key', 'interval': '1', 'duration': '1', 'key': '.', 'location': None}
+{'name': 'Drag and drop', 'interval': '1', 'choosePosSource': 2, 'source': '/media/duong/DATA/LINUX/Code/Auto/img/mycomputer.png', 'choosePosDes': 2, 'des': '/media/duong/DATA/LINUX/Code/Auto/img/tailieu.png', 'duration': '2', 'isLeft': 1, 'location': ('/media/duong/DATA/LINUX/Code/Auto/img/mycomputer.png', '/media/duong/DATA/LINUX/Code/Auto/img/tailieu.png')}

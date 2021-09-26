@@ -1,0 +1,11 @@
+{'name': 'Left click', 'interval': '1', 'choosePos': 1, 'location': '(114, 460)', 'duration': None}
+{'name': 'Left click', 'interval': '1', 'choosePos': 1, 'location': '(119, 356)', 'duration': None}
+{'name': 'Left click', 'interval': '1', 'choosePos': 1, 'location': '(112, 255)', 'duration': None}
+{'name': 'Left click', 'interval': '1', 'choosePos': 1, 'location': '(115, 163)', 'duration': None}
+{'name': 'Left click', 'interval': '1', 'choosePos': 1, 'location': '(125, 65)', 'duration': None}
+{'name': 'Left click', 'interval': '1', 'choosePos': 2, 'location': '/media/duong/DATA/LINUX/Code/Auto/img/tailieu.png', 'duration': None}
+{'name': 'Left click', 'interval': '1', 'choosePos': 2, 'location': '/media/duong/DATA/LINUX/Code/Auto/img/brave.png', 'duration': None}
+{'name': 'Left click', 'interval': '1', 'choosePos': 2, 'location': '/media/duong/DATA/LINUX/Code/Auto/img/media.png', 'duration': None}
+{'name': 'Left click', 'interval': '1', 'choosePos': 2, 'location': '/media/duong/DATA/LINUX/Code/Auto/img/home.png', 'duration': None}
+{'name': 'Left click', 'interval': '1', 'choosePos': 2, 'location': '/media/duong/DATA/LINUX/Code/Auto/img/mycomputer.png', 'duration': None}
+{'name': 'Left click', 'interval': '1', 'choosePos': 2, 'location': '/media/duong/DATA/LINUX/Code/Auto/img/window.png', 'duration': None}
