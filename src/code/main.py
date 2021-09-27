@@ -1107,7 +1107,6 @@ class AutoApp():
         self.root.rowconfigure(2,weight=1)
         self.root.rowconfigure(3,weight=1)
         self.root.geometry(self.getCenter(self.root))
-        print(self.root.geometry())
 
         self.menu = myMenubar(self.root)
         self.root.config(menu=self.menu.menuBar)

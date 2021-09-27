@@ -65,7 +65,6 @@ class keyCombinationForm:
         self.root.wait_window()
         return self.keyComb
     def doneButtonClicked(self):
-        print(self.root.geometry())
         self.keyComb = self.keyCombTxtbox.get()
         self.root.destroy()
     def checkCommand(self,text):
