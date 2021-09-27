@@ -94,10 +94,9 @@ class TypeaString:
         self.string = string
         self.location = location
     def execute(self,region,confidence):
-        intervalEachLetter = float(self.interval)/len(self.string)
+        durationEachLetter = float(self.duration)/len(self.string)
         time.sleep(float(self.interval))
-        pyautogui.write(self.string,intervalEachLetter)
-
+        pyautogui.write(self.string,durationEachLetter)
 class Capture:
     def __init__(self,interval, topleft, botright,path, duration = None, location = None) -> None:
         self.name = 'Capture screenshot'
