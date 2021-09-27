@@ -2,6 +2,8 @@ from tkinter import *
 from tkinter import ttk
 from tkinter import messagebox
 from tkinter import filedialog
+
+from pyscreeze import center
 from settings_form import settingsForm, SettingResult
 import threading
 from keyCombimation_form import ChooseOneKeyForm, keyCombinationForm
@@ -153,7 +155,11 @@ class myMenubar:
         self.addMenu.add_cascade(label='Keyboard',menu=self.keyboardMenu)
         self.addMenu.add_command(label='Capture screenshot',command=lambda :self.addCommand('Capture screenshot'))
     def open_settings(self):
-         self.addFrametoChange.setting = settingsForm().show()
+        g = self.app.root.geometry()
+        size = tuple(int(_) for _ in self.app.root.geometry().split('+')[0].split('x'))
+        pos = tuple(int(_) for _ in self.app.root.geometry().split('+')[1:])
+        centerPoint = (pos[0] + size[0]/2,pos[1] + size[1]/2)
+        self.addFrametoChange.setting = settingsForm(centerPoint).show()
     def addCommand(self,text):
         self.addFrametoChange.optionMenuEvent(self.addFrametoChange,selected=text)
 
@@ -524,6 +530,8 @@ class myAddFrame():
         self.locationDesLbl = Label(self.addFrame,text='')
         self.locationDesLbl.grid(sticky='w',column=5,row=4,pady=5)
 
+        self.app_root = None
+
         #open setting
         f = open('settings.txt','r')
         setting = f.read()
@@ -616,13 +624,19 @@ class myAddFrame():
         self.windowRightLbl['text'] = self.choosePostitionManually()
 
     def open_keyCombinationForm(self):
-        text = keyCombinationForm(self.stringTxtbox.get()).show()
+        size = tuple(int(_) for _ in self.app_root.geometry().split('+')[0].split('x'))
+        pos = tuple(int(_) for _ in self.app_root.geometry().split('+')[1:])
+        centerPoint = (pos[0] + size[0]/2,pos[1] + size[1]/2)
+        text = keyCombinationForm(self.stringTxtbox.get(),centerPoint).show()
         self.stringTxtboxChanged = True
         self.stringTxtbox.delete(0,END)
         self.stringTxtbox.insert(0,text)
         self.stringTxtboxChanged = False
     def openChooseOneKeyForm(self):
-        text = ChooseOneKeyForm(self.stringTxtbox.get()).show()
+        size = tuple(int(_) for _ in self.app_root.geometry().split('+')[0].split('x'))
+        pos = tuple(int(_) for _ in self.app_root.geometry().split('+')[1:])
+        centerPoint = (pos[0] + size[0]/2,pos[1] + size[1]/2)
+        text = ChooseOneKeyForm(self.stringTxtbox.get(),centerPoint).show()
         self.stringTxtboxChanged = True
         self.stringTxtbox.delete(0,END)
         self.stringTxtbox.insert(0,text)
@@ -1074,6 +1088,14 @@ class AutoThread(threading.Thread):
                     self.listener.stop()
 
 class AutoApp():
+    def getCenter(self,toplevel):
+        size = (839,348)
+        screenSize = pyautogui.size()
+        x = int(screenSize[0]/2 - size[0]/2)
+        y = int(screenSize[1]/2 - size[1]/2)-100
+        return '+{}+{}'.format(x,y)
+
+
     def init_UI(self):
         self.root = Tk()
         self.screenSize = pyautogui.size()
@@ -1084,6 +1106,8 @@ class AutoApp():
         self.root.rowconfigure(1,weight=1)
         self.root.rowconfigure(2,weight=1)
         self.root.rowconfigure(3,weight=1)
+        self.root.geometry(self.getCenter(self.root))
+        print(self.root.geometry())
 
         self.menu = myMenubar(self.root)
         self.root.config(menu=self.menu.menuBar)
@@ -1152,6 +1176,7 @@ class AutoApp():
         self.connectButtonAndTableFrame()
         self.connectMenuAndButton()
         self.connectAppandMenu()
+        self.addFrame.app_root = self.root
         self.root.mainloop()
     
 

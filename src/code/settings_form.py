@@ -39,7 +39,7 @@ class SettingResult:
         self.right = right
 
 class settingsForm:
-    def __init__(self):
+    def __init__(self,centerPoint):
         self.root = Toplevel()
         self.setting = None
         self.root.columnconfigure(0,weight=1)
@@ -48,6 +48,9 @@ class settingsForm:
         self.root.rowconfigure(7,weight=1)
         self.root.title('Setting')
         self.root.resizable(width=False,height=False)
+        size = (485,347)
+        self.root.geometry('+{}+{}'.format(int(centerPoint[0]-size[0]/2),int(centerPoint[1]-size[1]/2)))
+
         self.vcmdFloat = (self.root.register(self.validateFloat),"%P")
         self.vcmdConf = (self.root.register(self.validateConf),"%P")
         self.r = IntVar()

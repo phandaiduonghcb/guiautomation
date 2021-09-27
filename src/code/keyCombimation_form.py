@@ -1,13 +1,15 @@
 from tkinter import *
 
 class keyCombinationForm:
-    def __init__(self,keyComb):
+    def __init__(self,keyComb,centerPoint):
         self.root = Toplevel()
         self.root.title('Choose keys')
         self.root.resizable(width=False,height=False)
         self.root.rowconfigure(0,weight=1)
         self.root.rowconfigure(1,weight=1)
         self.root.columnconfigure(0,weight=1)
+        size = (243,326)
+        self.root.geometry('+{}+{}'.format(int(centerPoint[0] - size[0]/2),int(centerPoint[1] - size[1]/2)))
         self.keyComb=keyComb
         
         
@@ -63,6 +65,7 @@ class keyCombinationForm:
         self.root.wait_window()
         return self.keyComb
     def doneButtonClicked(self):
+        print(self.root.geometry())
         self.keyComb = self.keyCombTxtbox.get()
         self.root.destroy()
     def checkCommand(self,text):
@@ -129,8 +132,8 @@ class keyCombinationForm:
 
 
 class ChooseOneKeyForm(keyCombinationForm):
-    def __init__(self,keyComb):
-        super().__init__(keyComb)
+    def __init__(self,keyComb,centerPoint):
+        super().__init__(keyComb,centerPoint)
     def checkCommand(self, text):
 
         textPos = self.specialKeyStrings.index(text)

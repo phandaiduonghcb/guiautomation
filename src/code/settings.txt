@@ -1,1 +1,1 @@
-{'choice': 3, 'conf': '0.7', 'defInterval': '1', 'defDuration': '2', 'left': '(461, 100)', 'right': '(574, 222)'}
+{'choice': 3, 'conf': '0.7', 'defInterval': '1', 'defDuration': '2', 'left': '(0, 0)', 'right': '(1919, 1079)'}
